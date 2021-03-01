@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="bg-light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JS Script</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+    <script type="text/javascript" src="/js/tipcalc.js"></script>
+  </head>
+
+  <body class="bg-light">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand text-warning" href="/">
+          <img src="/img/greywidget.jpg" alt="the author and his cat" width="48" height="48" class="d-inline-block align-top">
+          <span class="display-6">Basic js script</span>
+        </a>
+
+
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container-fluid pb-5">
+
+      <main class="row justify-content-center pt-3 main-row">
+        
+        <div class="row justify-content-between pb-3">
+            <div class="col-2">
+                <img src="/img/the_human.png" alt="the author in silhouette" class="d-block w-100">
+            </div>
+            <div class="col-2">
+                <img src="/img/the_cat.png" alt="the author's cat in silhouette" class="d-block w-100">
+            </div>
+        </div>
+
+        <div class="row justify-content-center pt-3">
+            <div class="col-sm-10">
+                <h1>Simple Javascript Tip Calculation</h1>
+                <p>You've had a lovely meal and the total came to £67.56 not including a tip of 20 percent.</p>
+                <p id="tipText"></p>
+                <p>
+                    <button type="button" class="btn btn-secondary text-warning" onclick="calcTip()">Press Me</button>
+                </p>
+                <div class="bg-white">
+<pre>
+function calcTip() {
+    var totalAmount = 67.56;
+    var tipPercent = 20;
+    var tipAmount = (totalAmount * tipPercent / 100);
+    document.getElementById('tipText').innerHTML = 
+    `Your total bill, including tip comes to £${(totalAmount + tipAmount).toFixed(2)}` +
+    `. The tip amount was £${tipAmount.toFixed(2)}`;
+};
+<pre>
+                </div>
+            </div>
+        </div>
+      </main>
+
+    </div> <!-- main container div -->
+
+    <footer class="fixed-bottom py-3 bg-secondary text-warning">
+      <div class="container-fluid text-small">
+        <div class="row mt-auto">
+          <div class="col-4">
+            &copy; greywidget 2021.
+          </div>
+          <div class="col-8 text-end">
+            The cat is not responsible for the content of this site.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+  </body>
+</html>
